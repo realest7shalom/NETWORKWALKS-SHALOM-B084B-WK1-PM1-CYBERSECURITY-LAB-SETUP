@@ -27,14 +27,18 @@ The lab gives me a controlled place to practise scanning, reconnaissance and oth
 
 ## 🏗️ Lab Architecture
 
+```
 Host PC (Windows)
  └── VirtualBox 7.2.22
       └── NAT Network: NatNetwork-Lab (10.0.0.0/24, DHCP enabled)
            └── Kali Linux VM (Kali-29160): 10.0.0.2/24
+```
 
 Kali running on the lab network, with the connectivity test:
 
-![Kali lab overview](1-screenshot-title-image.png)
+![Kali lab overview](screenshots/1-screenshot-title-image.png)
+
+---
 
 ## ⚙️ Lab Configuration
 
@@ -57,7 +61,7 @@ Kali running on the lab network, with the connectivity test:
 ## 🪜 Lab Setup Procedure
 
 ### Step 1. Install VirtualBox
-I installed the latest VirtualBox (version 7.2.22) from the official site and used my existing Kali Linux VM, 'Kali-29160'.
+I installed the latest VirtualBox (version 7.2.22) from the official site and used my existing Kali Linux VM, `Kali-29160`.
 
 ### Step 2. Take a snapshot before making changes
 Before touching any settings I took a snapshot named `BEFORE-WEEK-1`, so I could roll back if a network change broke the VM.
@@ -65,14 +69,14 @@ Before touching any settings I took a snapshot named `BEFORE-WEEK-1`, so I could
 ### Step 3. Create the NAT Network
 In **File > Tools > Network > NAT Networks** I created a new network:
 
-- Name: NatNetwork-Lab
-- IPv4 Prefix: 10.0.0.0/24
+- Name: `NatNetwork-Lab`
+- IPv4 Prefix: `10.0.0.0/24`
 - DHCP: enabled
 - IPv6: disabled
 
 A default `NatNetwork` (10.0.2.0/24) already existed on my machine, so I created a separate network instead of changing it. This protects my other VMs.
 
-![NAT Network settings](2-screenshot-network-settings-1.png)
+![NAT Network settings](screenshots/NatNetwork-Lab.png)
 
 ### Step 4. Configure the Kali VM
 In the Kali VM settings:
@@ -82,7 +86,7 @@ In the Kali VM settings:
 - **General > Features:** Shared Clipboard and Drag-and-Drop both set to Bidirectional
 - **Shared Folders:** host Downloads folder added with Auto-mount
 
-![Kali VM network adapter](3-screenshot-kali-linux.png)
+![Kali VM network adapter](screenshots/Adapters.png)
 
 ### Step 5. Set the static IP in Kali
 In Network Connections > Wired connection 1 > IPv4 Settings:
@@ -103,7 +107,7 @@ sudo nmcli connection down "Wired connection 1"
 sudo nmcli connection up "Wired connection 1"
 ```
 
-![Kali IPv4 settings](4-screenshot-kali-network-settings.png)
+![Kali IPv4 settings](screenshots/IPV4-Kali-Settings.png)
 
 ### Step 6. Take the final snapshot
 After testing everything I took a snapshot named `WEEK1-LAB-COMPLETED`. The Snapshots tab now shows `BEFORE-WEEK-1` and `WEEK1-LAB-COMPLETED`.
