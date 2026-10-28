@@ -173,4 +173,4 @@ This lab is for education only. Hacking is only legal on systems I own, in my ow
 
 ## 📌 Project Information
 
-**Program:** Cybersecurity at Networkwalks, Batch B084 | **Week:** 01 | **Project:** Cybersecurity & Pentesting Lab Setup | **Repository:** GitHub
+**Program:** Cybersecurity at Networkwalks, Batch B084B | **Week:** 01 | **Project:** Cybersecurity & Pentesting Lab Setup | **Repository:** GitHub
